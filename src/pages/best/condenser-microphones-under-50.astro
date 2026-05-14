@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const q2u = products.find(p => p.id === 'samson-q2u')!;
+---
+
+<Layout
+  title="Best Condenser Microphones Under $50 (2026) — HomeRecordingGear"
+  description="Honest look at condenser mics under $50. Spoiler: there's one good option, and it's not a condenser."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Best-of list</p>
+      <h1 class="text-3xl font-bold text-gray-900">Best Condenser Microphones Under $50 (2026)</h1>
+      <p class="text-gray-600 text-lg">
+        A real condenser under $50 that doesn't sound terrible is hard to find. Here's what I'd actually buy instead.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Honest take first</p>
+      <p class="text-gray-700">
+        Most condenser mics under $50 have real quality control problems — thin, brittle highs,
+        cheap capsules, and preamps that add noise. At this price, you're better served by a
+        quality dynamic mic that sounds consistently good than a gamble on a cheap condenser.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">What I'd actually buy at this price</h2>
+      <ProductCard
+        name={q2u.name}
+        price={q2u.price}
+        rating={q2u.rating}
+        reviewCount={q2u.review_count}
+        affiliateUrl={q2u.affiliate_url}
+        badge="Top pick under $60"
+        description="Dynamic mic with both USB and XLR. Consistent, reliable, sounds great on voice."
+      />
+      <p class="text-gray-600 text-sm">
+        Yes, it's technically $60 — but I'd rather point you toward something that actually works
+        than squeeze you into a $45 condenser you'll want to replace in 3 months.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">If you specifically want a condenser</h2>
+      <p>
+        Save another $40 and get the <a href="/best/microphones-under-100" class="text-blue-600 hover:underline">Audio-Technica AT2020</a>.
+        It's the first condenser at this price range that's genuinely good — not "good for the price,"
+        just good. The difference between a $45 condenser and the AT2020 is bigger than the price gap suggests.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">What's the difference between dynamic and condenser?</h2>
+      <p>
+        Condensers are more sensitive — they pick up more detail, but also more room noise and
+        background sound. Dynamics are more forgiving and work better in untreated rooms (most bedrooms).
+        For a beginner recording in an untreated bedroom, a good dynamic often outperforms a cheap condenser.
+      </p>
+      <p>
+        <a href="/guides/how-to-set-up-a-home-recording-studio-on-a-budget" class="text-blue-600 hover:underline">
+          Read: How to set up a home recording studio on a budget →
+        </a>
+      </p>
+    </section>
+  </article>
+</Layout>

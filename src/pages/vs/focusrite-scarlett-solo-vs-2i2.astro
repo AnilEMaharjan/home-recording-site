@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
+const diff = twoI2.price - solo.price;
+---
+
+<Layout
+  title="Focusrite Scarlett Solo vs 2i2 (2026) — HomeRecordingGear"
+  description="Focusrite Scarlett Solo vs 2i2: which should you buy? Honest comparison for beginners."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Comparison</p>
+      <h1 class="text-3xl font-bold text-gray-900">Focusrite Scarlett Solo vs 2i2</h1>
+      <p class="text-gray-600 text-lg">
+        This is the most common beginner audio interface question. The answer is simpler than you think.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">The short answer</p>
+      <p class="text-gray-700">
+        <strong>Solo</strong> if you'll only ever record one thing at a time.
+        <strong>2i2</strong> if there's any chance you'll record two things simultaneously (guitar + vocals,
+        two people, etc.). The ${diff.toFixed(0)} difference is worth the flexibility.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Side by side</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="text-left py-2 pr-4 font-semibold text-gray-700"></th>
+              <th class="text-left py-2 pr-4 font-semibold text-gray-700">Solo</th>
+              <th class="text-left py-2 font-semibold text-gray-700">2i2</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Price</td>
+              <td class="py-2 pr-4">${solo.price}</td>
+              <td class="py-2">${twoI2.price}</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">XLR inputs</td>
+              <td class="py-2 pr-4">1</td>
+              <td class="py-2">2</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Instrument inputs</td>
+              <td class="py-2 pr-4">1 (shared)</td>
+              <td class="py-2">2</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Direct monitoring</td>
+              <td class="py-2 pr-4">Mono only</td>
+              <td class="py-2">Stereo</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Headphone outputs</td>
+              <td class="py-2 pr-4">1</td>
+              <td class="py-2">1</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 font-medium text-gray-600">Air mode</td>
+              <td class="py-2 pr-4">Yes</td>
+              <td class="py-2">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">When to get the Solo</h2>
+      <p>
+        You record one source at a time: one mic for vocals or podcasting, or one guitar at a time.
+        You don't need to record two people simultaneously. The Solo has the same preamp quality
+        as the 2i2 — you're not losing sound quality, just inputs.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">When to get the 2i2</h2>
+      <p>
+        You play guitar and sing at the same time. You want to record an interview with two mics.
+        You produce music and want two simultaneous inputs for flexibility. Or you're just not sure —
+        in that case, the 2i2 is the safer bet. It's the better seller for a reason.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Sound quality difference?</h2>
+      <p>
+        None. They use the same preamp circuit. The Solo is not a "lesser" product — it's just fewer inputs.
+        Both have Focusrite's Air mode, which adds a subtle high-frequency lift inspired by the ISA transformer.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Buy</h2>
+      <div class="space-y-4">
+        <ProductCard
+          name={solo.name}
+          price={solo.price}
+          rating={solo.rating}
+          reviewCount={solo.review_count}
+          affiliateUrl={solo.affiliate_url}
+          badge="Solo"
+        />
+        <ProductCard
+          name={twoI2.name}
+          price={twoI2.price}
+          rating={twoI2.rating}
+          reviewCount={twoI2.review_count}
+          affiliateUrl={twoI2.affiliate_url}
+          badge="2i2"
+        />
+      </div>
+    </section>
+  </article>
+</Layout>

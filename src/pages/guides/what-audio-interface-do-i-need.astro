@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
+---
+
+<Layout
+  title="What Audio Interface Do I Need? (2026) — HomeRecordingGear"
+  description="What audio interface do you actually need as a beginner? Plain answer, no jargon."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Guide</p>
+      <h1 class="text-3xl font-bold text-gray-900">What Audio Interface Do I Actually Need?</h1>
+      <p class="text-gray-600 text-lg">
+        An audio interface converts your microphone's signal into something your computer understands.
+        Here's whether you need one and which one to get.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Do you need one at all?</p>
+      <p class="text-gray-700">
+        Only if you're using an XLR microphone. USB mics connect directly to your computer — no interface needed.
+        If you're considering a USB mic, <a href="/vs/usb-vs-xlr-microphone-beginners" class="text-blue-600 hover:underline">read this first</a>.
+      </p>
+    </div>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">What does an interface actually do?</h2>
+      <p>
+        Your XLR mic outputs an analog signal. Your computer's built-in audio input (if it has one at all)
+        is designed for consumer headphone-level signals, not microphone signals. An interface:
+      </p>
+      <ul class="list-disc list-inside space-y-1 ml-2">
+        <li>Amplifies the mic signal with a clean preamp</li>
+        <li>Converts analog to digital (ADC) at professional quality</li>
+        <li>Handles the phantom power that condenser mics need</li>
+        <li>Gives you a headphone output with zero-latency monitoring</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Which interface do beginners need?</h2>
+      <p>
+        For one mic at a time: the <strong>Focusrite Scarlett Solo</strong>. It's the most recommended
+        beginner interface for a reason — reliable, clean-sounding, works on Mac and Windows,
+        and comes with a software bundle (Ableton Live Lite, plugins) worth more than the interface itself.
+      </p>
+      <p>
+        For two simultaneous inputs (guitar + mic, two people): the <strong>Scarlett 2i2</strong>.
+        Same preamp quality, two inputs.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <div class="space-y-4">
+        <ProductCard
+          name={solo.name}
+          price={solo.price}
+          rating={solo.rating}
+          reviewCount={solo.review_count}
+          affiliateUrl={solo.affiliate_url}
+          badge="For one mic"
+          description="1 XLR + 1 instrument input. The standard beginner interface."
+        />
+        <ProductCard
+          name={twoI2.name}
+          price={twoI2.price}
+          rating={twoI2.rating}
+          reviewCount={twoI2.review_count}
+          affiliateUrl={twoI2.affiliate_url}
+          badge="For two inputs"
+          description="2 XLR/instrument inputs. Record guitar and vocals simultaneously."
+        />
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">What about the really cheap interfaces?</h2>
+      <p>
+        Interfaces under $50 from brands you've never heard of tend to have one or more of these problems:
+        driver issues after macOS updates, too much background noise in the preamp, flaky build quality,
+        or latency that makes monitoring painful. The Scarlett costs more but just works, and you won't
+        be googling driver fixes at 11pm.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Related</h2>
+      <ul class="space-y-1">
+        <li><a href="/vs/focusrite-scarlett-solo-vs-2i2" class="text-blue-600 hover:underline">Focusrite Scarlett Solo vs 2i2 — full comparison →</a></li>
+        <li><a href="/vs/usb-vs-xlr-microphone-beginners" class="text-blue-600 hover:underline">USB vs XLR: which should beginners get? →</a></li>
+        <li><a href="/best/audio-interfaces-for-beginners" class="text-blue-600 hover:underline">Best audio interfaces for beginners →</a></li>
+      </ul>
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
+---
+
+<Layout
+  title="Best Audio Interfaces for Beginners (2026) — HomeRecordingGear"
+  description="The best audio interfaces for beginners in 2026. Two picks, one clear winner for most people."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Best-of list</p>
+      <h1 class="text-3xl font-bold text-gray-900">Best Audio Interfaces for Beginners (2026)</h1>
+      <p class="text-gray-600 text-lg">
+        An interface is the box that connects your XLR mic to your computer. You only need one if you're
+        using an XLR mic — and this page tells you exactly which one to get.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Bottom line up front</p>
+      <p class="text-gray-700">
+        Get the <strong>Focusrite Scarlett Solo</strong> if you record one thing at a time (1 mic or 1 guitar).
+        Get the <strong>Focusrite Scarlett 2i2</strong> if you ever want to record two sources simultaneously
+        or do guitar + vocals at once. The $50 difference is worth it if there's any chance you'll need two inputs.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Our picks</h2>
+      <div class="space-y-4">
+        <ProductCard
+          name={solo.name}
+          price={solo.price}
+          rating={solo.rating}
+          reviewCount={solo.review_count}
+          affiliateUrl={solo.affiliate_url}
+          badge="Best for most beginners"
+          description="1 XLR + 1 instrument input. All you need for a podcast or vocal recording setup."
+        />
+        <ProductCard
+          name={twoI2.name}
+          price={twoI2.price}
+          rating={twoI2.rating}
+          reviewCount={twoI2.review_count}
+          affiliateUrl={twoI2.affiliate_url}
+          badge="Best for musicians"
+          description="2 XLR/instrument inputs. Record guitar and vocals at the same time."
+        />
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Why Focusrite?</h2>
+      <p>
+        The Scarlett series has dominated beginner interfaces for a decade for good reason: the preamps
+        sound clean, the build quality holds up, drivers work on Mac and Windows without drama, and support
+        is solid. At this price point there's nothing that comes close for pure reliability.
+      </p>
+      <p>
+        I've seen beginners get lured by cheaper no-name interfaces at $40-60. They almost always
+        regret it — weird latency, driver issues on macOS updates, thin sound. The Scarlett is $120
+        and it just works.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Solo vs 2i2 — which one?</h2>
+      <p>
+        <a href="/vs/focusrite-scarlett-solo-vs-2i2" class="text-blue-600 hover:underline">
+          Full comparison: Focusrite Scarlett Solo vs 2i2 →
+        </a>
+      </p>
+    </section>
+  </article>
+</Layout>

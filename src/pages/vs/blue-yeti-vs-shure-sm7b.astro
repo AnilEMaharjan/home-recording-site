@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const yeti = products.find(p => p.id === 'blue-yeti')!;
+const sm7b = products.find(p => p.id === 'shure-sm7b')!;
+---
+
+<Layout
+  title="Blue Yeti vs Shure SM7B (2026) — HomeRecordingGear"
+  description="Blue Yeti vs Shure SM7B: completely different mics for different situations. Here's which one you actually need."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Comparison</p>
+      <h1 class="text-3xl font-bold text-gray-900">Blue Yeti vs Shure SM7B</h1>
+      <p class="text-gray-600 text-lg">
+        These two mics are asked about together constantly, but they're not really competing.
+        One is a beginner-friendly USB mic. The other is a professional XLR dynamic used by
+        major podcasters. Here's who should get which.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">The short answer</p>
+      <p class="text-gray-700">
+        <strong>Blue Yeti</strong> if you're a beginner who wants plug-and-play USB, doesn't have an
+        audio interface, and needs to stay under $150. <strong>SM7B</strong> only if you're serious
+        about podcasting, already have a good preamp, and are ready to spend ~$500+ total on your setup.
+        Most beginners have no business buying an SM7B yet.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Side by side</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="text-left py-2 pr-4 font-semibold text-gray-700"></th>
+              <th class="text-left py-2 pr-4 font-semibold text-gray-700">Blue Yeti</th>
+              <th class="text-left py-2 font-semibold text-gray-700">Shure SM7B</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Price</td>
+              <td class="py-2 pr-4">${yeti.price}</td>
+              <td class="py-2">${sm7b.price}</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Connection</td>
+              <td class="py-2 pr-4">USB (plug in direct)</td>
+              <td class="py-2">XLR (needs interface)</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Type</td>
+              <td class="py-2 pr-4">Condenser</td>
+              <td class="py-2">Dynamic</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Needs interface?</td>
+              <td class="py-2 pr-4">No</td>
+              <td class="py-2">Yes (+ loud preamp)</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4 font-medium text-gray-600">Room sensitivity</td>
+              <td class="py-2 pr-4">Picks up room noise</td>
+              <td class="py-2">More forgiving</td>
+            </tr>
+            <tr>
+              <td class="py-2 pr-4 font-medium text-gray-600">Total cost to use</td>
+              <td class="py-2 pr-4">~$130</td>
+              <td class="py-2">~$500–600+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">The SM7B preamp problem</h2>
+      <p>
+        The SM7B needs a lot of gain to sound good. Standard interfaces like the Scarlett Solo
+        don't provide enough clean gain. You'll need either a Cloudlifter (~$150) or a higher-end
+        interface. This catches beginners off guard — you buy a $400 mic and it sounds worse than
+        your friend's Blue Yeti because your preamp isn't loud enough.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Buy</h2>
+      <div class="space-y-4">
+        <ProductCard
+          name={yeti.name}
+          price={yeti.price}
+          rating={yeti.rating}
+          reviewCount={yeti.review_count}
+          affiliateUrl={yeti.affiliate_url}
+          badge="Best for beginners"
+        />
+        <ProductCard
+          name={sm7b.name}
+          price={sm7b.price}
+          rating={sm7b.rating}
+          reviewCount={sm7b.review_count}
+          affiliateUrl={sm7b.affiliate_url}
+          badge="For serious setups"
+        />
+      </div>
+    </section>
+  </article>
+</Layout>

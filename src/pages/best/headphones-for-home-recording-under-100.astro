@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const m50x = products.find(p => p.id === 'audio-technica-ath-m50x')!;
+const sony = products.find(p => p.id === 'sony-mdr-7506')!;
+---
+
+<Layout
+  title="Best Headphones for Home Recording Under $100 (2026) — HomeRecordingGear"
+  description="The two best studio headphones under $100 for home recording. Used by professionals, priced for beginners."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Best-of list</p>
+      <h1 class="text-3xl font-bold text-gray-900">Best Headphones for Home Recording Under $100 (2026)</h1>
+      <p class="text-gray-600 text-lg">
+        Two picks. Both used in professional studios. One is more accurate, one is more comfortable.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Bottom line up front</p>
+      <p class="text-gray-700">
+        Get the <strong>Sony MDR-7506</strong> if accuracy is your priority — it's the industry standard
+        for a reason. Get the <strong>Audio-Technica ATH-M50x</strong> if you want slightly more bass
+        presence and a more comfortable fit for long sessions. Both are excellent.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Our picks</h2>
+      <div class="space-y-4">
+        <ProductCard
+          name={sony.name}
+          price={sony.price}
+          rating={sony.rating}
+          reviewCount={sony.review_count}
+          affiliateUrl={sony.affiliate_url}
+          badge="Best for accuracy"
+          description="Flat, accurate sound. The reference standard in broadcast and recording studios worldwide."
+        />
+        <ProductCard
+          name={m50x.name}
+          price={m50x.price}
+          rating={m50x.rating}
+          reviewCount={m50x.review_count}
+          affiliateUrl={m50x.affiliate_url}
+          badge="Best for comfort"
+          description="Slightly enhanced bass, excellent isolation, very comfortable for long sessions."
+        />
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">What matters in studio headphones</h2>
+      <p>
+        For recording, you want <strong>closed-back</strong> headphones — they isolate sound so mic
+        bleed doesn't ruin your take. Both of these are closed-back. Open-back headphones sound better
+        for critical listening but bleed into your mic.
+      </p>
+      <p>
+        Avoid headphones marketed for bass (Beats, etc.) — they color the sound in ways that
+        make mixing decisions unreliable. You want accurate, not flattering.
+      </p>
+    </section>
+  </article>
+</Layout>

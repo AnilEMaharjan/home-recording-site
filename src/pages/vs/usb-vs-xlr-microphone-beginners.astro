@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const yeti = products.find(p => p.id === 'blue-yeti')!;
+const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+const q2u = products.find(p => p.id === 'samson-q2u')!;
+---
+
+<Layout
+  title="USB vs XLR Microphone for Beginners — HomeRecordingGear"
+  description="USB vs XLR mic: which should a beginner buy? Plain answer with no gear-nerd jargon."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Guide</p>
+      <h1 class="text-3xl font-bold text-gray-900">USB vs XLR Microphone — Which Should Beginners Get?</h1>
+      <p class="text-gray-600 text-lg">
+        USB mics plug into your computer like a flash drive. XLR mics need an audio interface.
+        Here's which one makes sense for where you are right now.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">The short answer</p>
+      <p class="text-gray-700">
+        <strong>USB</strong> if you want simplicity, portability, and to spend under $150 total.
+        <strong>XLR</strong> if you're serious about recording quality and willing to invest ~$250+
+        in a mic + interface combo. XLR is more flexible long-term; USB is faster to start.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">USB microphones</h2>
+      <div class="space-y-3 text-gray-700">
+        <p><strong>Pros:</strong> Plug in and go. No extra gear. Works on any computer. Cheaper total cost to start.</p>
+        <p><strong>Cons:</strong> Harder to upgrade later (can't swap just the mic capsule). Less flexibility for multi-mic setups. Can't use most professional mics.</p>
+        <p><strong>Best for:</strong> Podcasters, streamers, remote workers, anyone who moves between locations.</p>
+      </div>
+      <ProductCard
+        name={yeti.name}
+        price={yeti.price}
+        rating={yeti.rating}
+        reviewCount={yeti.review_count}
+        affiliateUrl={yeti.affiliate_url}
+        badge="Best USB mic"
+      />
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">XLR microphones</h2>
+      <div class="space-y-3 text-gray-700">
+        <p><strong>Pros:</strong> Better sound quality at equivalent price points. Upgradeable — change mic or interface independently. Access to the full range of professional mics.</p>
+        <p><strong>Cons:</strong> Needs an audio interface (adds $120+). More cables. More setup.</p>
+        <p><strong>Best for:</strong> Musicians, producers, serious podcasters, anyone planning to grow their setup.</p>
+      </div>
+      <div class="space-y-3">
+        <ProductCard
+          name={at2020.name}
+          price={at2020.price}
+          rating={at2020.rating}
+          reviewCount={at2020.review_count}
+          affiliateUrl={at2020.affiliate_url}
+          badge="Best XLR mic under $100"
+        />
+        <ProductCard
+          name={solo.name}
+          price={solo.price}
+          rating={solo.rating}
+          reviewCount={solo.review_count}
+          affiliateUrl={solo.affiliate_url}
+          badge="Required interface"
+        />
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">The middle option: both</h2>
+      <p class="text-gray-700">
+        The Samson Q2U has both USB and XLR outputs. Start USB now, add an interface later
+        without buying a new mic. Genuinely smart for someone who's not sure yet.
+      </p>
+      <ProductCard
+        name={q2u.name}
+        price={q2u.price}
+        rating={q2u.rating}
+        reviewCount={q2u.review_count}
+        affiliateUrl={q2u.affiliate_url}
+        badge="USB + XLR"
+      />
+    </section>
+  </article>
+</Layout>

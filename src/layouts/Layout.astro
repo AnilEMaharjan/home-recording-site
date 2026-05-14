@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Honest gear recommendations for beginner bedroom producers and podcasters on a budget.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b border-gray-200">
+      <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="font-bold text-lg text-gray-900 hover:text-blue-600">HomeRecordingGear</a>
+        <nav class="flex gap-6 text-sm text-gray-600">
+          <a href="/guides/how-to-set-up-a-home-recording-studio-on-a-budget" class="hover:text-gray-900">Guides</a>
+          <a href="/about" class="hover:text-gray-900">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-3xl mx-auto px-4 py-10 w-full">
+      <slot />
+    </main>
+
+    <footer class="border-t border-gray-200 mt-16">
+      <div class="max-w-3xl mx-auto px-4 py-6 text-xs text-gray-500">
+        <p>As an Amazon Associate and affiliate of other programs, I earn from qualifying purchases. Prices shown are approximate and may change.</p>
+      </div>
+    </footer>
+  </body>
+</html>

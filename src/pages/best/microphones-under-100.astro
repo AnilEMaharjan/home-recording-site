@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const mics = products.filter(p => p.category === 'microphone');
+const at2020 = mics.find(p => p.id === 'audio-technica-at2020')!;
+const yeti = mics.find(p => p.id === 'blue-yeti')!;
+const q2u = mics.find(p => p.id === 'samson-q2u')!;
+---
+
+<Layout
+  title="Best Microphones Under $100 (2026) — HomeRecordingGear"
+  description="The 3 best microphones under $100 for home recording and podcasting. Honest picks for beginners, no fluff."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Best-of list</p>
+      <h1 class="text-3xl font-bold text-gray-900">Best Microphones Under $100 (2026)</h1>
+      <p class="text-gray-600 text-lg">
+        Three mics worth buying. One clear winner for most people. Skip everything else.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Bottom line up front</p>
+      <p class="text-gray-700">
+        If you record vocals or podcast with a decent recording space, get the
+        <strong>Audio-Technica AT2020</strong>. It's the best condenser mic at this price.
+        If you want plug-and-play USB with no interface needed, get the <strong>Blue Yeti</strong>.
+        On a tight budget, the <strong>Samson Q2U</strong> is the smartest buy — XLR and USB in one mic.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Our picks</h2>
+      <div class="space-y-4">
+        <ProductCard
+          name={at2020.name}
+          price={at2020.price}
+          rating={at2020.rating}
+          reviewCount={at2020.review_count}
+          affiliateUrl={at2020.affiliate_url}
+          badge="Best overall"
+          description="Best-in-class condenser at this price. Needs an audio interface with XLR."
+        />
+        <ProductCard
+          name={yeti.name}
+          price={yeti.price}
+          rating={yeti.rating}
+          reviewCount={yeti.review_count}
+          affiliateUrl={yeti.affiliate_url}
+          badge="Best USB"
+          description="Plug-and-play USB. No interface needed. Great for podcasters and streamers."
+        />
+        <ProductCard
+          name={q2u.name}
+          price={q2u.price}
+          rating={q2u.rating}
+          reviewCount={q2u.review_count}
+          affiliateUrl={q2u.affiliate_url}
+          badge="Best budget"
+          description="Both USB and XLR outputs. Grow into an interface later without buying a new mic."
+        />
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">How we chose</h2>
+      <p>
+        Under $100 is a crowded category with a lot of junk. I narrowed it to mics with
+        a proven track record, consistent quality control, and genuinely good sound — not
+        just good specs on paper. These three show up in professional studios and home setups alike.
+      </p>
+      <p>
+        I excluded USB condensers that sound thin on voice, dynamic mics that need a loud preamp
+        to shine, and anything with flaky build quality at this price.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Do you need an audio interface?</h2>
+      <p>
+        The AT2020 is XLR-only, so yes — you'll need an interface. The Focusrite Scarlett Solo
+        is the standard rec for beginners and adds ~$120. The Blue Yeti and Samson Q2U both
+        connect directly over USB with no interface needed.
+      </p>
+      <p>
+        <a href="/guides/what-audio-interface-do-i-need" class="text-blue-600 hover:underline">
+          Read: What audio interface do I actually need? →
+        </a>
+      </p>
+    </section>
+  </article>
+</Layout>

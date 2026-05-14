@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
+const sony = products.find(p => p.id === 'sony-mdr-7506')!;
+const q2u = products.find(p => p.id === 'samson-q2u')!;
+
+const budgetBundle = q2u.price;
+const fullBundle = solo.price + at2020.price;
+---
+
+<Layout
+  title="Best Home Recording Bundles Under $200 (2026) — HomeRecordingGear"
+  description="Two home recording starter bundles under $200. One for the absolute beginner, one for the serious starter."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Best-of list</p>
+      <h1 class="text-3xl font-bold text-gray-900">Best Home Recording Bundles Under $200 (2026)</h1>
+      <p class="text-gray-600 text-lg">
+        Don't know what to buy? Here are two complete setups. Buy one, plug it in, start recording.
+      </p>
+    </header>
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Bottom line up front</p>
+      <p class="text-gray-700">
+        If you want to spend as little as possible to start: the <strong>Samson Q2U</strong> alone
+        (~${budgetBundle}) plugs directly into your computer and sounds good.
+        If you're serious about recording quality and don't mind spending more:
+        <strong>Scarlett Solo + AT2020</strong> (~${fullBundle.toFixed(0)}) is the classic beginner studio setup
+        that will serve you for years.
+      </p>
+    </div>
+
+    <section class="space-y-6">
+      <div class="space-y-3">
+        <h2 class="text-xl font-semibold text-gray-900">Bundle 1: The $60 starter</h2>
+        <p class="text-gray-600">One mic, USB, plug in and go. No other purchases needed.</p>
+        <ProductCard
+          name={q2u.name}
+          price={q2u.price}
+          rating={q2u.rating}
+          reviewCount={q2u.review_count}
+          affiliateUrl={q2u.affiliate_url}
+          badge="Budget pick"
+          description="USB + XLR dynamic mic. Sounds good on voice. Works without an interface."
+        />
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-xl font-semibold text-gray-900">Bundle 2: The serious starter (~${fullBundle.toFixed(0)})</h2>
+        <p class="text-gray-600">Interface + condenser mic. The setup most recording tutorials assume you have.</p>
+        <ProductCard
+          name={solo.name}
+          price={solo.price}
+          rating={solo.rating}
+          reviewCount={solo.review_count}
+          affiliateUrl={solo.affiliate_url}
+          description="The interface. One XLR input, clean preamp, works on Mac and Windows."
+        />
+        <ProductCard
+          name={at2020.name}
+          price={at2020.price}
+          rating={at2020.rating}
+          reviewCount={at2020.review_count}
+          affiliateUrl={at2020.affiliate_url}
+          description="The mic. Best condenser at this price for vocals and acoustic recording."
+        />
+        <p class="text-sm text-gray-500">
+          You'll also need an XLR cable (~$10) and a mic stand (~$20–30) if you don't already have them.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">What about headphones?</h2>
+      <p>
+        Neither bundle includes headphones. If you're monitoring while recording, add the
+        <a href="/best/headphones-for-home-recording-under-100" class="text-blue-600 hover:underline">Sony MDR-7506</a> (~$100)
+        to stay in budget for Bundle 2.
+      </p>
+    </section>
+  </article>
+</Layout>

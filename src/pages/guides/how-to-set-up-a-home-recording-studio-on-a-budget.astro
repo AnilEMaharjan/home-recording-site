@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../../data/products.json';
+
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
+const sony = products.find(p => p.id === 'sony-mdr-7506')!;
+---
+
+<Layout
+  title="How to Set Up a Home Recording Studio on a Budget (2026) — HomeRecordingGear"
+  description="How to set up a home recording studio without wasting money. A practical guide for beginners spending $100–$300."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Guide</p>
+      <h1 class="text-3xl font-bold text-gray-900">How to Set Up a Home Recording Studio on a Budget</h1>
+      <p class="text-gray-600 text-lg">
+        You don't need a soundproofed room or $3,000 in gear. Here's the minimum viable home studio
+        that actually produces quality recordings.
+      </p>
+    </header>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Step 1: Pick your microphone</h2>
+      <p>
+        The mic is the most important decision. Everything else you can upgrade later without it
+        affecting everything else. Your mic determines what kind of interface you need
+        (XLR vs USB) and how sensitive your setup is to room noise.
+      </p>
+      <p>
+        For most beginners: <a href="/best/microphones-under-100" class="text-blue-600 hover:underline">
+        pick from this list</a>. Don't spend more than $150 on a mic until you've outgrown a cheaper one.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Step 2: Get an audio interface (if using XLR)</h2>
+      <p>
+        XLR mics need an interface. USB mics don't. If you went USB, skip this step.
+        If you went XLR, the <strong>Focusrite Scarlett Solo</strong> is the standard recommendation
+        at this price range — clean preamp, reliable drivers, good software bundle.
+      </p>
+      <ProductCard
+        name={solo.name}
+        price={solo.price}
+        rating={solo.rating}
+        reviewCount={solo.review_count}
+        affiliateUrl={solo.affiliate_url}
+      />
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Step 3: Get studio headphones</h2>
+      <p>
+        Don't use consumer headphones (AirPods, Beats) for recording or mixing — their boosted
+        bass makes your mixes sound good in your ears but bad on everything else. You need flat,
+        accurate headphones.
+      </p>
+      <p>
+        The Sony MDR-7506 is the most widely used reference headphone in recording studios and
+        broadcast at this price. It's not flashy, but it's right.
+      </p>
+      <ProductCard
+        name={sony.name}
+        price={sony.price}
+        rating={sony.rating}
+        reviewCount={sony.review_count}
+        affiliateUrl={sony.affiliate_url}
+      />
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Step 4: Get your recording software (DAW)</h2>
+      <p>
+        Every Focusrite Scarlett comes bundled with <strong>Ableton Live Lite</strong> — free,
+        and good enough to get started. GarageBand is free on Mac and fully capable for basic recording.
+        Logic Pro ($199) is a one-time purchase and the most common professional choice on Mac.
+        Reaper is $60 and the best value paid DAW on any platform.
+      </p>
+      <p>Start with what's free. You'll know when you've outgrown it.</p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Step 5: Treat your room (for free)</h2>
+      <p>
+        You don't need acoustic foam panels. Before spending money on treatment, try recording
+        in a closet full of clothes — the fabric absorbs reflections and it's surprisingly effective.
+        Record away from hard parallel walls. Put a blanket behind your mic to kill reflections.
+      </p>
+      <p>
+        Acoustic treatment makes a bigger difference than a more expensive mic. A $100 mic in a
+        treated space sounds better than a $400 mic in a live room.
+      </p>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">The full budget breakdown</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="text-left py-2 pr-4 font-semibold text-gray-700">Item</th>
+              <th class="text-left py-2 font-semibold text-gray-700">Cost</th>
+            </tr>
+          </thead>
+          <tbody class="text-gray-700">
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Audio-Technica AT2020 (mic)</td>
+              <td class="py-2">$99</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Focusrite Scarlett Solo (interface)</td>
+              <td class="py-2">$120</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Sony MDR-7506 (headphones)</td>
+              <td class="py-2">$100</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">XLR cable</td>
+              <td class="py-2">$10</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="py-2 pr-4">Mic stand</td>
+              <td class="py-2">$20</td>
+            </tr>
+            <tr class="font-semibold">
+              <td class="py-2 pr-4">Total</td>
+              <td class="py-2">~$349</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-gray-500 mt-2">
+        Prices are approximate. See <a href="/best/home-recording-bundles-under-200" class="text-blue-600 hover:underline">budget bundles under $200</a> if you need to spend less.
+      </p>
+    </section>
+  </article>
+</Layout>
