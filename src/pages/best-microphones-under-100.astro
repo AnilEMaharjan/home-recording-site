@@ -1,12 +1,13 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const mics = products.filter(p => p.category === 'microphone');
 const at2020 = mics.find(p => p.id === 'audio-technica-at2020')!;
 const yeti = mics.find(p => p.id === 'blue-yeti')!;
 const q2u = mics.find(p => p.id === 'samson-q2u')!;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -21,6 +22,8 @@ const q2u = mics.find(p => p.id === 'samson-q2u')!;
         Three mics worth buying. One clear winner for most people. Skip everything else.
       </p>
     </header>
+
+    <AffiliateDisclosure />
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
       <p class="font-semibold text-gray-900">Bottom line up front</p>
@@ -40,7 +43,7 @@ const q2u = mics.find(p => p.id === 'samson-q2u')!;
           price={at2020.price}
           rating={at2020.rating}
           reviewCount={at2020.review_count}
-          affiliateUrl={at2020.affiliate_url}
+          retailers={at2020.retailers}
           badge="Best overall"
           description="Best-in-class condenser at this price. Needs an audio interface with XLR."
         />
@@ -49,7 +52,7 @@ const q2u = mics.find(p => p.id === 'samson-q2u')!;
           price={yeti.price}
           rating={yeti.rating}
           reviewCount={yeti.review_count}
-          affiliateUrl={yeti.affiliate_url}
+          retailers={yeti.retailers}
           badge="Best USB"
           description="Plug-and-play USB. No interface needed. Great for podcasters and streamers."
         />
@@ -58,7 +61,7 @@ const q2u = mics.find(p => p.id === 'samson-q2u')!;
           price={q2u.price}
           rating={q2u.rating}
           reviewCount={q2u.review_count}
-          affiliateUrl={q2u.affiliate_url}
+          retailers={q2u.retailers}
           badge="Best budget"
           description="Both USB and XLR outputs. Grow into an interface later without buying a new mic."
         />
@@ -78,6 +81,25 @@ const q2u = mics.find(p => p.id === 'samson-q2u')!;
       </p>
     </section>
 
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">What beginners actually ask before buying</h2>
+      <p class="text-sm text-gray-500">Questions pulled from r/homerecording and Sweetwater's Q&A — these come up constantly.</p>
+      <div class="space-y-4">
+        <div class="border-l-4 border-gray-200 pl-4 space-y-1">
+          <p class="font-medium text-gray-900">"Is the AT2020 too sensitive for a noisy apartment?"</p>
+          <p class="text-gray-700 text-sm">Yes, if your room has a lot of echo or street noise bleeding in. Condenser mics pick up everything. In that case the Samson Q2U (dynamic) is more forgiving — it focuses on what's directly in front of it and rejects room noise better.</p>
+        </div>
+        <div class="border-l-4 border-gray-200 pl-4 space-y-1">
+          <p class="font-medium text-gray-900">"Why does the Blue Yeti sound echoey in recordings?"</p>
+          <p class="text-gray-700 text-sm">Almost always because the cardioid pattern is set wrong or the mic is too far from your mouth. The Yeti needs to be 4–6 inches from you, not across the desk. This is the #1 complaint and it's a placement issue, not a mic quality issue.</p>
+        </div>
+        <div class="border-l-4 border-gray-200 pl-4 space-y-1">
+          <p class="font-medium text-gray-900">"Do I need a pop filter?"</p>
+          <p class="text-gray-700 text-sm">For vocals, yes — a $10 pop filter prevents the plosive bursts ("p" and "b" sounds) that are annoying to edit out later. Not strictly necessary for spoken-word podcasting if you speak across the mic rather than directly into it.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="space-y-3 text-gray-700">
       <h2 class="text-xl font-semibold text-gray-900">Do you need an audio interface?</h2>
       <p>
@@ -86,7 +108,7 @@ const q2u = mics.find(p => p.id === 'samson-q2u')!;
         connect directly over USB with no interface needed.
       </p>
       <p>
-        <a href="/guides/what-audio-interface-do-i-need" class="text-blue-600 hover:underline">
+        <a href="/what-audio-interface-do-i-need" class="text-blue-600 hover:underline">
           Read: What audio interface do I actually need? →
         </a>
       </p>

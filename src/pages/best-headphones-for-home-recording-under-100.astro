@@ -1,10 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const m50x = products.find(p => p.id === 'audio-technica-ath-m50x')!;
 const sony = products.find(p => p.id === 'sony-mdr-7506')!;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -19,6 +20,8 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
         Two picks. Both used in professional studios. One is more accurate, one is more comfortable.
       </p>
     </header>
+
+    <AffiliateDisclosure />
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
       <p class="font-semibold text-gray-900">Bottom line up front</p>
@@ -37,7 +40,7 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
           price={sony.price}
           rating={sony.rating}
           reviewCount={sony.review_count}
-          affiliateUrl={sony.affiliate_url}
+          retailers={sony.retailers}
           badge="Best for accuracy"
           description="Flat, accurate sound. The reference standard in broadcast and recording studios worldwide."
         />
@@ -46,7 +49,7 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
           price={m50x.price}
           rating={m50x.rating}
           reviewCount={m50x.review_count}
-          affiliateUrl={m50x.affiliate_url}
+          retailers={m50x.retailers}
           badge="Best for comfort"
           description="Slightly enhanced bass, excellent isolation, very comfortable for long sessions."
         />

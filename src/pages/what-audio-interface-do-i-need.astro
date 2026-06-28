@@ -1,10 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -21,11 +22,13 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
       </p>
     </header>
 
+    <AffiliateDisclosure />
+
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
       <p class="font-semibold text-gray-900">Do you need one at all?</p>
       <p class="text-gray-700">
         Only if you're using an XLR microphone. USB mics connect directly to your computer — no interface needed.
-        If you're considering a USB mic, <a href="/vs/usb-vs-xlr-microphone-beginners" class="text-blue-600 hover:underline">read this first</a>.
+        If you're considering a USB mic, <a href="/usb-vs-xlr-microphone-beginners" class="text-blue-600 hover:underline">read this first</a>.
       </p>
     </div>
 
@@ -63,7 +66,7 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
           price={solo.price}
           rating={solo.rating}
           reviewCount={solo.review_count}
-          affiliateUrl={solo.affiliate_url}
+          retailers={solo.retailers}
           badge="For one mic"
           description="1 XLR + 1 instrument input. The standard beginner interface."
         />
@@ -72,7 +75,7 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
           price={twoI2.price}
           rating={twoI2.rating}
           reviewCount={twoI2.review_count}
-          affiliateUrl={twoI2.affiliate_url}
+          retailers={twoI2.retailers}
           badge="For two inputs"
           description="2 XLR/instrument inputs. Record guitar and vocals simultaneously."
         />
@@ -92,9 +95,9 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
     <section class="space-y-3 text-gray-700">
       <h2 class="text-xl font-semibold text-gray-900">Related</h2>
       <ul class="space-y-1">
-        <li><a href="/vs/focusrite-scarlett-solo-vs-2i2" class="text-blue-600 hover:underline">Focusrite Scarlett Solo vs 2i2 — full comparison →</a></li>
-        <li><a href="/vs/usb-vs-xlr-microphone-beginners" class="text-blue-600 hover:underline">USB vs XLR: which should beginners get? →</a></li>
-        <li><a href="/best/audio-interfaces-for-beginners" class="text-blue-600 hover:underline">Best audio interfaces for beginners →</a></li>
+        <li><a href="/focusrite-scarlett-solo-vs-2i2" class="text-blue-600 hover:underline">Focusrite Scarlett Solo vs 2i2 — full comparison →</a></li>
+        <li><a href="/usb-vs-xlr-microphone-beginners" class="text-blue-600 hover:underline">USB vs XLR: which should beginners get? →</a></li>
+        <li><a href="/best-audio-interfaces-for-beginners" class="text-blue-600 hover:underline">Best audio interfaces for beginners →</a></li>
       </ul>
     </section>
   </article>

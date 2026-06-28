@@ -1,16 +1,21 @@
 ---
+interface Retailer {
+  name: string;
+  url: string;
+}
+
 interface Props {
   name: string;
   price: number;
   rating: number;
   reviewCount: number;
-  affiliateUrl: string;
+  retailers: Retailer[];
   badge?: string;
   description?: string;
 }
 
-const { name, price, rating, reviewCount, affiliateUrl, badge, description } = Astro.props;
-
+const { name, price, rating, reviewCount, retailers, badge, description } = Astro.props;
+const [primary, ...secondary] = retailers;
 const stars = Math.round(rating);
 ---
 
@@ -34,11 +39,25 @@ const stars = Math.round(rating);
   </div>
 
   <a
-    href={affiliateUrl}
+    href={primary.url}
     target="_blank"
     rel="noopener noreferrer sponsored"
     class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-center py-2.5 px-4 rounded-lg transition-colors"
   >
-    Check Price on Amazon
+    Check Price at {primary.name}
   </a>
+
+  {secondary.length > 0 && (
+    <p class="text-xs text-gray-500">
+      Also at:{' '}
+      {secondary.map((r, i) => (
+        <>
+          <a href={r.url} target="_blank" rel="noopener noreferrer sponsored" class="text-blue-500 hover:underline">
+            {r.name}
+          </a>
+          {i < secondary.length - 1 && ' · '}
+        </>
+      ))}
+    </p>
+  )}
 </div>

@@ -1,11 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
 const sony = products.find(p => p.id === 'sony-mdr-7506')!;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -22,6 +23,8 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
       </p>
     </header>
 
+    <AffiliateDisclosure />
+
     <section class="space-y-3 text-gray-700">
       <h2 class="text-xl font-semibold text-gray-900">Step 1: Pick your microphone</h2>
       <p>
@@ -30,7 +33,7 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
         (XLR vs USB) and how sensitive your setup is to room noise.
       </p>
       <p>
-        For most beginners: <a href="/best/microphones-under-100" class="text-blue-600 hover:underline">
+        For most beginners: <a href="/best-microphones-under-100" class="text-blue-600 hover:underline">
         pick from this list</a>. Don't spend more than $150 on a mic until you've outgrown a cheaper one.
       </p>
     </section>
@@ -47,7 +50,7 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
         price={solo.price}
         rating={solo.rating}
         reviewCount={solo.review_count}
-        affiliateUrl={solo.affiliate_url}
+        retailers={solo.retailers}
       />
     </section>
 
@@ -67,7 +70,7 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
         price={sony.price}
         rating={sony.rating}
         reviewCount={sony.review_count}
-        affiliateUrl={sony.affiliate_url}
+        retailers={sony.retailers}
       />
     </section>
 
@@ -134,7 +137,7 @@ const sony = products.find(p => p.id === 'sony-mdr-7506')!;
         </table>
       </div>
       <p class="text-sm text-gray-500 mt-2">
-        Prices are approximate. See <a href="/best/home-recording-bundles-under-200" class="text-blue-600 hover:underline">budget bundles under $200</a> if you need to spend less.
+        Prices are approximate. See <a href="/best-home-recording-bundles-under-200" class="text-blue-600 hover:underline">budget bundles under $200</a> if you need to spend less.
       </p>
     </section>
   </article>

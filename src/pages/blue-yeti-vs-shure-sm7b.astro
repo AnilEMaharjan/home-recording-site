@@ -1,10 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const yeti = products.find(p => p.id === 'blue-yeti')!;
 const sm7b = products.find(p => p.id === 'shure-sm7b')!;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -21,6 +22,8 @@ const sm7b = products.find(p => p.id === 'shure-sm7b')!;
         major podcasters. Here's who should get which.
       </p>
     </header>
+
+    <AffiliateDisclosure />
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
       <p class="font-semibold text-gray-900">The short answer</p>
@@ -97,7 +100,7 @@ const sm7b = products.find(p => p.id === 'shure-sm7b')!;
           price={yeti.price}
           rating={yeti.rating}
           reviewCount={yeti.review_count}
-          affiliateUrl={yeti.affiliate_url}
+          retailers={yeti.retailers}
           badge="Best for beginners"
         />
         <ProductCard
@@ -105,7 +108,7 @@ const sm7b = products.find(p => p.id === 'shure-sm7b')!;
           price={sm7b.price}
           rating={sm7b.rating}
           reviewCount={sm7b.review_count}
-          affiliateUrl={sm7b.affiliate_url}
+          retailers={sm7b.retailers}
           badge="For serious setups"
         />
       </div>

@@ -1,10 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -20,6 +21,8 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
         using an XLR mic — and this page tells you exactly which one to get.
       </p>
     </header>
+
+    <AffiliateDisclosure />
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
       <p class="font-semibold text-gray-900">Bottom line up front</p>
@@ -38,7 +41,7 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
           price={solo.price}
           rating={solo.rating}
           reviewCount={solo.review_count}
-          affiliateUrl={solo.affiliate_url}
+          retailers={solo.retailers}
           badge="Best for most beginners"
           description="1 XLR + 1 instrument input. All you need for a podcast or vocal recording setup."
         />
@@ -47,7 +50,7 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
           price={twoI2.price}
           rating={twoI2.rating}
           reviewCount={twoI2.review_count}
-          affiliateUrl={twoI2.affiliate_url}
+          retailers={twoI2.retailers}
           badge="Best for musicians"
           description="2 XLR/instrument inputs. Record guitar and vocals at the same time."
         />
@@ -68,10 +71,29 @@ const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
       </p>
     </section>
 
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">What beginners actually ask before buying</h2>
+      <p class="text-sm text-gray-500">Questions pulled from r/homerecording and Focusrite's own community forum — these come up constantly.</p>
+      <div class="space-y-4">
+        <div class="border-l-4 border-gray-200 pl-4 space-y-1">
+          <p class="font-medium text-gray-900">"Can I use my interface headphone output instead of buying monitors?"</p>
+          <p class="text-gray-700 text-sm">Yes, and most beginners should. Studio monitors are great but they require acoustic treatment to be useful — in an untreated bedroom you'll mix based on room reflections, not the actual sound. Good closed-back headphones (ATH-M50x) in an untreated room will beat monitors in an untreated room every time.</p>
+        </div>
+        <div class="border-l-4 border-gray-200 pl-4 space-y-1">
+          <p class="font-medium text-gray-900">"Does the Scarlett Solo work with an iPad or iPhone?"</p>
+          <p class="text-gray-700 text-sm">The 4th gen works with iOS/iPadOS via USB-C, but you need the right adapter. Apple's USB-C to USB-C cable works directly on newer iPads. Older Lightning devices need Apple's Lightning to USB 3 Camera Adapter (not the basic one — it needs the powered version to supply enough current).</p>
+        </div>
+        <div class="border-l-4 border-gray-200 pl-4 space-y-1">
+          <p class="font-medium text-gray-900">"My interface hisses even with nothing plugged in — is it broken?"</p>
+          <p class="text-gray-700 text-sm">Probably not. Some self-noise at high gain settings is normal on any interface at this price. Turn the gain down until you only raise it enough for your mic — beginners often crank gain all the way up as a default. If the hiss is loud even at low gain, that's a hardware issue and warrants a return.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="space-y-3 text-gray-700">
       <h2 class="text-xl font-semibold text-gray-900">Solo vs 2i2 — which one?</h2>
       <p>
-        <a href="/vs/focusrite-scarlett-solo-vs-2i2" class="text-blue-600 hover:underline">
+        <a href="/focusrite-scarlett-solo-vs-2i2" class="text-blue-600 hover:underline">
           Full comparison: Focusrite Scarlett Solo vs 2i2 →
         </a>
       </p>

@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+---
+
+<Layout
+  title="Do I Need a Mixer for Home Recording? (2026) — HomeRecordingGear"
+  description="Short answer: probably not. Here's what a mixer actually does, why most beginners don't need one, and what to get instead."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Guide</p>
+      <h1 class="text-3xl font-bold text-gray-900">Do I Need a Mixer for Home Recording?</h1>
+      <p class="text-gray-600 text-lg">
+        Probably not. Most beginners confuse mixers with audio interfaces — they look similar but do different things. Here's the plain answer.
+      </p>
+    </header>
+
+    <AffiliateDisclosure />
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Short answer</p>
+      <p class="text-gray-700">
+        <strong>You need an audio interface, not a mixer.</strong> An interface gets audio into your computer cleanly. A mixer combines multiple audio signals together — useful live on stage, not what you need in a bedroom studio. If someone told you to buy a mixer for home recording, they probably meant interface.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">What a mixer actually does</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>
+          A mixer takes multiple audio inputs (mics, instruments, playback sources) and combines them into one or two output channels. Volume, EQ, and pan controls let you balance each source against the others.
+        </p>
+        <p>
+          This is essential for a live band performing on stage — you need one output signal going to the PA system from 20 different inputs. It's also used in broadcast studios running a live show.
+        </p>
+        <p>
+          What it's <em>not</em> designed for: recording each input as a separate track in software, which is exactly what home recording requires.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">What you actually need: an audio interface</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>
+          An audio interface converts your microphone's analog signal into digital audio your computer can work with. It gives you clean preamps, phantom power for condenser mics, and a headphone output for monitoring — all the things you need for bedroom recording.
+        </p>
+        <p>
+          Unlike a mixer, an interface sends each input as a separate track into your DAW, so you can mix, edit, and process them independently after recording. That's the whole point of multitrack recording.
+        </p>
+      </div>
+      <ProductCard
+        name={solo.name}
+        price={solo.price}
+        rating={solo.rating}
+        reviewCount={solo.review_count}
+        retailers={solo.retailers}
+        badge="What most beginners actually need"
+        description="1 XLR input for a mic, 1 instrument input for guitar. Plug into your computer via USB."
+      />
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">When would a beginner actually want a mixer?</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>Rare, but there are a few real cases:</p>
+        <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>You're running live sound</strong> — at a church, a small venue, or a rehearsal space where everything needs to go to speakers in real time.</li>
+          <li><strong>You want a hardware mix for monitoring</strong> — some engineers prefer mixing their headphone blend on hardware knobs rather than in software.</li>
+          <li><strong>You need more inputs than your interface has</strong> — some mixers have USB output and function as a combined mixer + interface. The Yamaha MG series is a common example. But for 1–2 inputs, this is overkill.</li>
+        </ul>
+        <p>
+          If none of those describe you, you don't need a mixer.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">The confusion explained</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>
+          Mixers and interfaces look similar from the front — they both have XLR inputs, knobs, and connect to speakers or headphones. This trips up a lot of beginners. The key difference is what happens to the signal: a mixer combines it before it reaches your computer; an interface passes it through cleanly for your software to handle.
+        </p>
+        <p>
+          The other source of confusion: YouTube gear tutorials from the 2000s often feature mixing boards prominently, because that's what pro studios used before DAWs took over. Modern home recording is built around audio interfaces, not mixers.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Related</h2>
+      <ul class="space-y-1">
+        <li><a href="/what-audio-interface-do-i-need" class="text-blue-600 hover:underline">What audio interface do I actually need? →</a></li>
+        <li><a href="/best-audio-interfaces-for-beginners" class="text-blue-600 hover:underline">Best audio interfaces for beginners →</a></li>
+        <li><a href="/focusrite-scarlett-solo-vs-2i2" class="text-blue-600 hover:underline">Focusrite Scarlett Solo vs 2i2 — which one? →</a></li>
+        <li><a href="/how-to-set-up-a-home-recording-studio-on-a-budget" class="text-blue-600 hover:underline">How to set up a home recording studio on a budget →</a></li>
+      </ul>
+    </section>
+  </article>
+</Layout>

@@ -1,11 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
 const diff = twoI2.price - solo.price;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -20,6 +21,8 @@ const diff = twoI2.price - solo.price;
         This is the most common beginner audio interface question. The answer is simpler than you think.
       </p>
     </header>
+
+    <AffiliateDisclosure />
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
       <p class="font-semibold text-gray-900">The short answer</p>
@@ -111,7 +114,7 @@ const diff = twoI2.price - solo.price;
           price={solo.price}
           rating={solo.rating}
           reviewCount={solo.review_count}
-          affiliateUrl={solo.affiliate_url}
+          retailers={solo.retailers}
           badge="Solo"
         />
         <ProductCard
@@ -119,7 +122,7 @@ const diff = twoI2.price - solo.price;
           price={twoI2.price}
           rating={twoI2.rating}
           reviewCount={twoI2.review_count}
-          affiliateUrl={twoI2.affiliate_url}
+          retailers={twoI2.retailers}
           badge="2i2"
         />
       </div>

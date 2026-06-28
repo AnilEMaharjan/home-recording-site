@@ -1,12 +1,13 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import ProductCard from '../../components/ProductCard.astro';
-import products from '../../../data/products.json';
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
 
 const yeti = products.find(p => p.id === 'blue-yeti')!;
 const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const q2u = products.find(p => p.id === 'samson-q2u')!;
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
@@ -22,6 +23,8 @@ const q2u = products.find(p => p.id === 'samson-q2u')!;
         Here's which one makes sense for where you are right now.
       </p>
     </header>
+
+    <AffiliateDisclosure />
 
     <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
       <p class="font-semibold text-gray-900">The short answer</p>
@@ -44,7 +47,7 @@ const q2u = products.find(p => p.id === 'samson-q2u')!;
         price={yeti.price}
         rating={yeti.rating}
         reviewCount={yeti.review_count}
-        affiliateUrl={yeti.affiliate_url}
+        retailers={yeti.retailers}
         badge="Best USB mic"
       />
     </section>
@@ -62,7 +65,7 @@ const q2u = products.find(p => p.id === 'samson-q2u')!;
           price={at2020.price}
           rating={at2020.rating}
           reviewCount={at2020.review_count}
-          affiliateUrl={at2020.affiliate_url}
+          retailers={at2020.retailers}
           badge="Best XLR mic under $100"
         />
         <ProductCard
@@ -70,7 +73,7 @@ const q2u = products.find(p => p.id === 'samson-q2u')!;
           price={solo.price}
           rating={solo.rating}
           reviewCount={solo.review_count}
-          affiliateUrl={solo.affiliate_url}
+          retailers={solo.retailers}
           badge="Required interface"
         />
       </div>
@@ -87,7 +90,7 @@ const q2u = products.find(p => p.id === 'samson-q2u')!;
         price={q2u.price}
         rating={q2u.rating}
         reviewCount={q2u.review_count}
-        affiliateUrl={q2u.affiliate_url}
+        retailers={q2u.retailers}
         badge="USB + XLR"
       />
     </section>

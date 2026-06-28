@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
+const headphones = products.find(p => p.id === 'audio-technica-ath-m50x')!;
+---
+
+<Layout
+  title="Open-Back vs Closed-Back Headphones for Recording (2026) — HomeRecordingGear"
+  description="Open-back vs closed-back headphones — which should you buy for home recording? The answer depends entirely on what you're doing with them."
+>
+  <article class="space-y-8">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Guide</p>
+      <h1 class="text-3xl font-bold text-gray-900">Open-Back vs Closed-Back Headphones for Recording</h1>
+      <p class="text-gray-600 text-lg">
+        The biggest headphone decision isn't brand or price — it's open vs closed. They're designed for different jobs. Here's how to pick.
+      </p>
+    </header>
+
+    <AffiliateDisclosure />
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Bottom line up front</p>
+      <p class="text-gray-700">
+        <strong>Recording vocals or instruments?</strong> Closed-back. Sound leaks out of open-back headphones into your mic.
+        <strong>Mixing and critical listening?</strong> Open-back if you can afford them. They sound more natural and less fatiguing.
+        <strong>Budget is tight or you want one pair?</strong> Closed-back. The <a href="/best-headphones-for-home-recording-under-100" class="text-blue-600 hover:underline">ATH-M50x</a> handles both jobs well enough.
+      </p>
+    </div>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">What "open-back" and "closed-back" actually mean</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>
+          The terms describe what's behind the headphone driver — the housing on the outside of each ear cup.
+        </p>
+        <p>
+          <strong>Closed-back:</strong> Sealed housing. Sound is trapped inside the cup. You hear it; no one else does.
+        </p>
+        <p>
+          <strong>Open-back:</strong> Perforated or mesh housing. Sound moves freely in both directions — the drivers can breathe, you hear the room slightly, and people nearby can hear what you're listening to.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Closed-back headphones</h2>
+      <div class="space-y-3 text-gray-700">
+        <p><strong>Sound leaks out:</strong> No. You can record with them on and your mic won't pick up bleed.</p>
+        <p><strong>Sound comes in:</strong> Minimal. They isolate you from room noise.</p>
+        <p><strong>Soundstage:</strong> Narrower, more intimate. The mix feels "in your head" rather than in front of you.</p>
+        <p><strong>Listening fatigue:</strong> Higher over long sessions, because of the sealed acoustic space.</p>
+        <p><strong>Use for:</strong> Tracking (recording while wearing headphones), podcasting, listening in noisy environments, most everyday use.</p>
+        <p><strong>Avoid for:</strong> Long mixing sessions if you can help it — closed-back headphones make it hard to judge spatial width accurately.</p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Open-back headphones</h2>
+      <div class="space-y-3 text-gray-700">
+        <p><strong>Sound leaks out:</strong> Yes — significantly. Don't use these while recording with a mic in the same room.</p>
+        <p><strong>Sound comes in:</strong> Yes. You'll hear the room, conversations, your keyboard. These don't isolate.</p>
+        <p><strong>Soundstage:</strong> Wide, natural, almost speaker-like. Easier to judge stereo placement and reverb tails.</p>
+        <p><strong>Listening fatigue:</strong> Lower. The natural airflow makes long sessions more comfortable.</p>
+        <p><strong>Use for:</strong> Mixing, mastering, critical listening, anything where accuracy matters more than isolation.</p>
+        <p><strong>Avoid for:</strong> Tracking sessions, public spaces, anywhere that headphone bleed into a mic is a problem.</p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">For most beginners: start with closed-back</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>
+          If you're just starting out and have one pair of headphones, get closed-back. Here's why:
+        </p>
+        <ul class="list-disc list-inside space-y-2 ml-2">
+          <li>You need them for tracking — open-back will bleed into your mic and ruin takes.</li>
+          <li>You'll use them for regular listening, not just studio work — closed-back travels and commutes.</li>
+          <li>A good closed-back like the ATH-M50x is accurate enough for decent mixing at this budget level.</li>
+        </ul>
+        <p>
+          Open-back headphones make more sense as a second pair, once you're at the stage where you care about mixing accuracy and you've already got closed-backs for tracking.
+        </p>
+      </div>
+      <ProductCard
+        name={headphones.name}
+        price={headphones.price}
+        rating={headphones.rating}
+        reviewCount={headphones.review_count}
+        retailers={headphones.retailers}
+        badge="Best closed-back for beginners"
+        description="Accurate, comfortable, works for both tracking and casual mixing."
+      />
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Budget open-back options worth knowing</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>
+          If you already have closed-backs and want to try open-back mixing, the entry point is around $100. The <strong>Philips SHP9500</strong> (~$75) and <strong>Sennheiser HD 400 PRO</strong> (~$130) are frequently recommended at this budget. The <strong>Sennheiser HD 560S</strong> (~$150) is a step up and a common choice for budget-conscious engineers.
+        </p>
+        <p>
+          These aren't stocked in our product list yet — but they're worth researching if you want a mixing-focused second pair.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Related</h2>
+      <ul class="space-y-1">
+        <li><a href="/best-headphones-for-home-recording-under-100" class="text-blue-600 hover:underline">Best headphones for home recording under $100 →</a></li>
+        <li><a href="/how-to-set-up-a-home-recording-studio-on-a-budget" class="text-blue-600 hover:underline">How to set up a home recording studio on a budget →</a></li>
+        <li><a href="/best-microphones-under-100" class="text-blue-600 hover:underline">Best microphones under $100 →</a></li>
+      </ul>
+    </section>
+  </article>
+</Layout>

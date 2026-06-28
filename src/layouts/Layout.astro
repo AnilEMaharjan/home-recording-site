@@ -1,12 +1,15 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
   description?: string;
+  canonical?: string;
 }
 
-const { title, description = 'Honest gear recommendations for beginner bedroom producers and podcasters on a budget.' } = Astro.props;
+const { title, description = 'Honest gear recommendations for beginner bedroom producers and podcasters on a budget.', canonical } = Astro.props;
+const canonicalURL = canonical ?? new URL(Astro.url.pathname, 'https://home-recording-site.vercel.app').href;
 ---
 
 <!doctype html>
@@ -15,6 +18,7 @@ const { title, description = 'Honest gear recommendations for beginner bedroom p
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
@@ -23,7 +27,7 @@ const { title, description = 'Honest gear recommendations for beginner bedroom p
       <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
         <a href="/" class="font-bold text-lg text-gray-900 hover:text-blue-600">HomeRecordingGear</a>
         <nav class="flex gap-6 text-sm text-gray-600">
-          <a href="/guides/how-to-set-up-a-home-recording-studio-on-a-budget" class="hover:text-gray-900">Guides</a>
+          <a href="/how-to-set-up-a-home-recording-studio-on-a-budget" class="hover:text-gray-900">Guides</a>
           <a href="/about" class="hover:text-gray-900">About</a>
         </nav>
       </div>
@@ -38,5 +42,6 @@ const { title, description = 'Honest gear recommendations for beginner bedroom p
         <p>As an Amazon Associate and affiliate of other programs, I earn from qualifying purchases. Prices shown are approximate and may change.</p>
       </div>
     </footer>
+    <Analytics />
   </body>
 </html>
