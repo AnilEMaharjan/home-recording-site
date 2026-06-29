@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../../data/products.json';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
+const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
+const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
+const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
+const yeti = products.find(p => p.id === 'blue-yeti')!;
+const q2u = products.find(p => p.id === 'samson-q2u')!;
+const m50x = products.find(p => p.id === 'audio-technica-ath-m50x')!;
+const sony = products.find(p => p.id === 'sony-mdr-7506')!;
+---
+
+<Layout
+  title="The Best $300 Home Studio Setup (2026) — HomeRecordingGear"
+  description="The exact gear I'd buy today to build a home recording studio for $300 or less. Three budget tiers, no fluff, no hedging."
+>
+  <article class="space-y-10">
+    <header class="space-y-3">
+      <p class="text-sm text-gray-500 uppercase tracking-wide font-medium">Guide</p>
+      <h1 class="text-3xl font-bold text-gray-900">The Best $300 Home Studio Setup (2026)</h1>
+      <p class="text-gray-600 text-lg">
+        The exact gear I'd buy today at three price points. No "it depends" hedging — just the stuff that works.
+      </p>
+    </header>
+
+    <AffiliateDisclosure />
+
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 space-y-1">
+      <p class="font-semibold text-gray-900">Before you buy anything</p>
+      <p class="text-gray-700">
+        Your room matters more than your gear. A $99 mic in a closet full of clothes sounds better than a $500 mic in a bare room with parallel walls. Sort your room first — it costs nothing.
+      </p>
+    </div>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-gray-900">The $60 setup — plug in and go</h2>
+      <p class="text-gray-700">
+        If you want to record today without buying an audio interface, this is it. The Samson Q2U connects via USB directly to your computer. It's a dynamic mic, which means it rejects room noise better than a condenser — great for untreated apartments. And it has an XLR output, so if you upgrade to an interface later, you keep the mic.
+      </p>
+      <ProductCard
+        name={q2u.name}
+        price={q2u.price}
+        rating={q2u.rating}
+        reviewCount={q2u.review_count}
+        retailers={q2u.retailers}
+        badge="Best starter mic"
+        description="USB + XLR in one. No interface needed to start."
+      />
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-700 space-y-1">
+        <p><strong>Add for free:</strong> GarageBand (Mac) or Cakewalk by BandLab (Windows). Both are fully functional DAWs at no cost.</p>
+        <p><strong>Skip for now:</strong> Pop filter, mic stand, acoustic treatment. Get a recording first, optimize later.</p>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-gray-900">The $220 setup — first real studio</h2>
+      <p class="text-gray-700">
+        This is the setup most beginners should start with if they're serious about recording quality. The AT2020 is genuinely good — not "good for the price," just good. The Scarlett Solo is the most reliable beginner interface available, and it comes bundled with Ableton Live Lite and plugins worth more than the interface itself.
+      </p>
+      <p class="text-gray-700">
+        The one tradeoff: the AT2020 is a condenser mic. It picks up everything, including your room. If your space is echoey, record in a closet or hang a heavy blanket behind you.
+      </p>
+      <div class="space-y-4">
+        <ProductCard
+          name={at2020.name}
+          price={at2020.price}
+          rating={at2020.rating}
+          reviewCount={at2020.review_count}
+          retailers={at2020.retailers}
+          badge="The mic"
+          description="Best condenser mic under $100. XLR only — needs the interface below."
+        />
+        <ProductCard
+          name={solo.name}
+          price={solo.price}
+          rating={solo.rating}
+          reviewCount={solo.review_count}
+          retailers={solo.retailers}
+          badge="The interface"
+          description="1 XLR input, clean preamps, comes with software bundle. Just works."
+        />
+      </div>
+      <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-700 space-y-1">
+        <p><strong>Also need:</strong> An XLR cable (~$10, any brand) and a mic stand (~$20 basic boom stand).</p>
+        <p><strong>Don't need yet:</strong> Headphones — use whatever you have. An audio interface headphone output is fine for monitoring.</p>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-gray-900">The $370 setup — complete starter studio</h2>
+      <p class="text-gray-700">
+        Add dedicated headphones and this setup will hold you up for years. The ATH-M50x are accurate enough for mixing and comfortable enough for long sessions. In an untreated room, good closed-back headphones beat studio monitors every time — monitors need acoustic treatment to be useful, headphones don't.
+      </p>
+      <div class="space-y-4">
+        <ProductCard
+          name={at2020.name}
+          price={at2020.price}
+          rating={at2020.rating}
+          reviewCount={at2020.review_count}
+          retailers={at2020.retailers}
+          badge="The mic"
+        />
+        <ProductCard
+          name={solo.name}
+          price={solo.price}
+          rating={solo.rating}
+          reviewCount={solo.review_count}
+          retailers={solo.retailers}
+          badge="The interface"
+        />
+        <ProductCard
+          name={m50x.name}
+          price={m50x.price}
+          rating={m50x.rating}
+          reviewCount={m50x.review_count}
+          retailers={m50x.retailers}
+          badge="The headphones"
+          description="Closed-back, accurate, built to last. Better than monitors in an untreated room."
+        />
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">The one setting that fixes most bad recordings</h2>
+      <div class="space-y-3 text-gray-700">
+        <p>
+          Gain staging. Almost every beginner either records too quietly or cranks the gain and gets hiss and distortion.
+        </p>
+        <p>
+          The fix: set your interface gain so your loudest moments peak at <strong>-12dB to -6dB</strong> in your DAW. Not 0dB. Not -30dB. Watch the meter while you do a test take at your loudest — dial the gain knob until the peak sits in that range, then leave it there.
+        </p>
+        <p>
+          If the meter is barely moving, turn the gain up. If it's hitting red, turn it down. That's it.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">Free room treatment (before you spend anything)</h2>
+      <div class="space-y-3 text-gray-700">
+        <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>Record in a closet</strong> — clothes are excellent broadband absorbers. Best free acoustic treatment available.</li>
+          <li><strong>Hang a heavy blanket</strong> on the wall behind you and behind the mic</li>
+          <li><strong>Close windows</strong> and turn off HVAC before takes</li>
+          <li><strong>Move away from hard parallel walls</strong> — even sitting in the middle of a room is better than in a corner</li>
+        </ul>
+        <p>
+          If you want to spend $20–30: a pack of acoustic foam panels on the wall behind the mic makes a real difference. They reduce flutter echo, not low-frequency rumble — but for voice recording, that's the main problem.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-gray-900">What not to buy</h2>
+      <div class="space-y-3 text-gray-700">
+        <ul class="list-disc list-inside space-y-2 ml-2">
+          <li><strong>A mixer</strong> — you need an audio interface, not a mixer. They look similar but do completely different things. A mixer combines signals for live sound; an interface gets audio into your computer for recording.</li>
+          <li><strong>Expensive cables</strong> — a $10 XLR cable sounds identical to a $60 one. Spend the difference on treatment.</li>
+          <li><strong>Studio monitors before room treatment</strong> — monitors in an untreated room will mislead you on every mix decision. Headphones first.</li>
+          <li><strong>No-name interfaces under $50</strong> — driver issues, preamp noise, and compatibility problems with macOS updates are common. The Scarlett is worth the extra $70.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="space-y-3 text-gray-700">
+      <h2 class="text-xl font-semibold text-gray-900">Related</h2>
+      <ul class="space-y-1">
+        <li><a href="/what-audio-interface-do-i-need" class="text-blue-600 hover:underline">What audio interface do I actually need? →</a></li>
+        <li><a href="/best-free-daw-for-beginners" class="text-blue-600 hover:underline">Best free DAW for beginners →</a></li>
+        <li><a href="/do-i-need-a-mixer-for-home-recording" class="text-blue-600 hover:underline">Do I need a mixer for home recording? →</a></li>
+        <li><a href="/usb-vs-xlr-microphone-beginners" class="text-blue-600 hover:underline">USB vs XLR — which should beginners get? →</a></li>
+        <li><a href="/open-back-vs-closed-back-headphones-recording" class="text-blue-600 hover:underline">Open-back vs closed-back headphones →</a></li>
+      </ul>
+    </section>
+  </article>
+</Layout>
