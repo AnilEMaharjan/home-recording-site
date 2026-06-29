@@ -6,9 +6,13 @@
     "price": 119.99,
     "rating": 4.7,
     "review_count": 14823,
-    "affiliate_url": "https://www.amazon.com/dp/B09QV594KQ?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "audio-interface"
+    "category": "audio-interface",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/focusrite-scarlett-solo?affid=YOURID" },
+      { "name": "Sweetwater", "url": "https://www.sweetwater.com/store/detail/ScarlettSolo4th/?utm_source=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B09QV594KQ?tag=YOURTAG-20" }
+    ]
   },
   {
     "id": "focusrite-scarlett-2i2-4th-gen",
@@ -17,9 +21,13 @@
     "price": 169.99,
     "rating": 4.8,
     "review_count": 31204,
-    "affiliate_url": "https://www.amazon.com/dp/B09QV5XKZQ?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "audio-interface"
+    "category": "audio-interface",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/focusrite-scarlett-2i2?affid=YOURID" },
+      { "name": "Sweetwater", "url": "https://www.sweetwater.com/store/detail/Scarlett2i24th/?utm_source=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B09QV5XKZQ?tag=YOURTAG-20" }
+    ]
   },
   {
     "id": "audio-technica-at2020",
@@ -28,9 +36,13 @@
     "price": 99.00,
     "rating": 4.7,
     "review_count": 22418,
-    "affiliate_url": "https://www.amazon.com/dp/B0006H92QK?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "microphone"
+    "category": "microphone",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/audio-technica-at2020?affid=YOURID" },
+      { "name": "Sweetwater", "url": "https://www.sweetwater.com/store/detail/AT2020/?utm_source=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B0006H92QK?tag=YOURTAG-20" }
+    ]
   },
   {
     "id": "blue-yeti",
@@ -39,9 +51,13 @@
     "price": 129.99,
     "rating": 4.6,
     "review_count": 48301,
-    "affiliate_url": "https://www.amazon.com/dp/B00N1YPXW2?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "microphone"
+    "category": "microphone",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/blue-yeti?affid=YOURID" },
+      { "name": "Sweetwater", "url": "https://www.sweetwater.com/store/detail/Yeti/?utm_source=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B00N1YPXW2?tag=YOURTAG-20" }
+    ]
   },
   {
     "id": "shure-sm7b",
@@ -50,9 +66,13 @@
     "price": 399.00,
     "rating": 4.8,
     "review_count": 19823,
-    "affiliate_url": "https://www.amazon.com/dp/B0002E4Z8M?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "microphone"
+    "category": "microphone",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/shure-sm7b?affid=YOURID" },
+      { "name": "Sweetwater", "url": "https://www.sweetwater.com/store/detail/SM7B/?utm_source=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B0002E4Z8M?tag=YOURTAG-20" }
+    ]
   },
   {
     "id": "samson-q2u",
@@ -61,9 +81,12 @@
     "price": 59.99,
     "rating": 4.5,
     "review_count": 8742,
-    "affiliate_url": "https://www.amazon.com/dp/B001R747SG?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "microphone"
+    "category": "microphone",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/samson-q2u?affid=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B001R747SG?tag=YOURTAG-20" }
+    ]
   },
   {
     "id": "audio-technica-ath-m50x",
@@ -72,9 +95,13 @@
     "price": 149.00,
     "rating": 4.7,
     "review_count": 37102,
-    "affiliate_url": "https://www.amazon.com/dp/B00HVLUR86?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "headphones"
+    "category": "headphones",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/audio-technica-ath-m50x?affid=YOURID" },
+      { "name": "Sweetwater", "url": "https://www.sweetwater.com/store/detail/ATHM50x/?utm_source=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B00HVLUR86?tag=YOURTAG-20" }
+    ]
   },
   {
     "id": "sony-mdr-7506",
@@ -83,8 +110,11 @@
     "price": 99.99,
     "rating": 4.6,
     "review_count": 21983,
-    "affiliate_url": "https://www.amazon.com/dp/B000AJIF4E?tag=YOURTAG-20",
     "last_updated": "2026-05-13",
-    "category": "headphones"
+    "category": "headphones",
+    "retailers": [
+      { "name": "Sam Ash", "url": "https://www.samash.com/sony-mdr-7506?affid=YOURID" },
+      { "name": "Amazon", "url": "https://www.amazon.com/dp/B000AJIF4E?tag=YOURTAG-20" }
+    ]
   }
 ]
