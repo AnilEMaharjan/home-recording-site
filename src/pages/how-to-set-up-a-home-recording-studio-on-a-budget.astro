@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import products from '../../data/products.json';
 
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
 const sony = products.find(p => p.id === 'sony-mdr-7506')!;
-import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout

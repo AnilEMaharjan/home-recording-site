@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import products from '../../data/products.json';
 
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
 const m50x = products.find(p => p.id === 'audio-technica-ath-m50x')!;
 const sony = products.find(p => p.id === 'sony-mdr-7506')!;
-import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout

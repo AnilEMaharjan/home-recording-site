@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import products from '../../data/products.json';
 
-const q2u = products.find(p => p.id === 'samson-q2u')!;
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
+const q2u = products.find(p => p.id === 'samson-q2u')!;
 ---
 
 <Layout

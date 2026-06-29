@@ -3,11 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import products from '../../data/products.json';
 
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
 const yeti = products.find(p => p.id === 'blue-yeti')!;
 const at2020 = products.find(p => p.id === 'audio-technica-at2020')!;
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const q2u = products.find(p => p.id === 'samson-q2u')!;
-import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout

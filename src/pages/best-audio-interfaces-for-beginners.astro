@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import ProductCard from '../components/ProductCard.astro';
 import products from '../../data/products.json';
 
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+
 const solo = products.find(p => p.id === 'focusrite-scarlett-solo-4th-gen')!;
 const twoI2 = products.find(p => p.id === 'focusrite-scarlett-2i2-4th-gen')!;
-import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 ---
 
 <Layout
