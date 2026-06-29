@@ -14,7 +14,7 @@ interface Props {
   description?: string;
 }
 
-const { name, price, rating, reviewCount, retailers, badge, description } = Astro.props;
+const { name, price, rating, reviewCount, retailers = [], badge, description } = Astro.props;
 const [primary, ...secondary] = retailers;
 const stars = Math.round(rating);
 ---
